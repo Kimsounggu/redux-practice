@@ -5,11 +5,9 @@ import { useState } from "react";
 const App = () => {
   const dispatch = useDispatch();
   const [number, setNumber] = useState(0);
-  const counter = useSelector((state) => {
-    state.counter.count;
-    console.log(state.counter);
-  });
-  console.log("counter =>", counter);
+  const counter = useSelector(
+    (state) => state.counter.count //{return state.counter.count}을 해주던가, 중괄호 없애든가
+  );
 
   const upCount = () => {
     dispatch(increment(Number(number)));
@@ -20,7 +18,7 @@ const App = () => {
 
   return (
     <>
-      <div>111{counter}111</div>
+      <div>카운트 : {counter}</div>
       <input
         type="number"
         value={number}
@@ -28,7 +26,6 @@ const App = () => {
       />
       <button onClick={upCount}>증가하기</button>
       <button onClick={downCount}>감소하기</button>
-      <div>222{counter}222</div>
     </>
   );
 };
