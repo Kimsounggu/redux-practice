@@ -1,9 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { countReducer } from "../slices/countSlice";
-
+import { countReducer } from "../slices/slice";
 const store = configureStore({
-  reducer: {
-    카운터: countReducer,
-  },
+  reducer: { counter: countReducer },
 });
+
 export default store;
